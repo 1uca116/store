@@ -1,0 +1,11 @@
+.main {
+    @apply bg-white;
+    @apply justify-between;
+}
+.btn_group {
+    @apply flex gap-2
+}
+.btn {
+    @apply bg-red text-white;
+    @apply p-3 rounded-md;
+}

@@ -1,0 +1,13 @@
+.main {
+    @apply !grid !grid-cols-4;
+    @apply gap-5;
+    @apply !items-start ;
+}
+.section_filter {
+    @apply col-span-1;
+    @apply bg-orange rounded-md;
+    @apply p-4;
+}
+.section_cards {
+    @apply col-span-3;
+}

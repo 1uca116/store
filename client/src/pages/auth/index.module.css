@@ -1,0 +1,26 @@
+.main {
+    @apply flex flex-col;
+    @apply h-full;
+}
+.card {
+    @apply rounded-md bg-orange;
+    @apply p-5 mb-3;
+    @apply flex flex-col gap-3;
+}
+.form{
+    @apply flex flex-col gap-3;
+
+}
+.input {
+    @apply px-3 py-1;
+    @apply rounded-md;
+}
+.btn {
+    @apply mt-3;
+    @apply bg-red;
+    @apply px-3 py-1;
+    @apply rounded-md;
+}
+.link {
+
+}
