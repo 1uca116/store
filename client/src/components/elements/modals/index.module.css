@@ -1,0 +1,48 @@
+.modal {
+    @apply hidden fixed;
+    @apply z-10 top-0 left-0;
+    @apply w-full h-full;
+    @apply pt-24;
+    @apply overflow-auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.visible {
+    @apply flex;
+}
+.modal_content {
+    @apply bg-white border border-red;
+    @apply m-auto p-5;
+    @apply flex flex-col items-end justify-between;
+}
+.form {
+    @apply flex flex-col gap-4;
+}
+.input {
+    @apply bg-stone rounded-md;
+    @apply px-4 py-2;
+    @apply w-full;
+}
+.btn {
+    @apply px-4 py-2 mt-4;
+    @apply bg-red text-white rounded-md;
+    @apply w-full;
+}
+.btn_secondary {
+    @apply px-4 py-2;
+    @apply bg-transparent text-red rounded-md;
+    @apply border border-red;
+}
+.close {
+    @apply text-neutral-400;
+    @apply font-semibold text-xl;
+}
+
+.close:hover,
+.close:focus {
+    @apply text-black cursor-pointer ;
+}
+
+.additional_form {
+    @apply flex gap-5 items-center;
+}

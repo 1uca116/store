@@ -10,4 +10,5 @@
 }
 .section_cards {
     @apply col-span-3;
+    @apply flex flex-col gap-5;
 }

@@ -4,17 +4,20 @@ import {Link} from "react-router-dom";
 import {Context} from "../../index";
 import {observer} from "mobx-react-lite";
 import Container from "../core/container";
+import {useNavigate} from "react-router-dom";
+import {ADMIN_ROUTE, LOGIN_ROUTE} from "../../utils/consts";
 
 const Navbar = observer(() => {
-    const { user } = useContext(Context)
+    const { user } = useContext(Context);
+    const history = useNavigate();
 
     return (
         <Container className={styles.main}>
             <Link to={'/'}>Main</Link>
             {user.isAuth ?
                 <div className={styles.btn_group}>
-                    <button className={styles.btn}>Admin panel</button>
-                    <button className={styles.btn}>Log in</button>
+                    <button className={styles.btn} onClick={()=> history(ADMIN_ROUTE)}>Admin panel</button>
+                    <button className={styles.btn} onClick={()=> history(LOGIN_ROUTE)}>Log out</button>
                 </div>
                 :
                 <div>

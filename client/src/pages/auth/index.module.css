@@ -6,10 +6,13 @@
     @apply rounded-md bg-orange;
     @apply p-5 mb-3;
     @apply flex flex-col gap-3;
+    @apply w-full max-w-sm;
+}
+.title {
+    @apply text-center;
 }
 .form{
     @apply flex flex-col gap-3;
-
 }
 .input {
     @apply px-3 py-1;
@@ -22,5 +25,5 @@
     @apply rounded-md;
 }
 .link {
-
+    @apply text-red underline decoration-solid;
 }
