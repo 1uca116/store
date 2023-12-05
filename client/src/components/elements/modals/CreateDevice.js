@@ -39,8 +39,8 @@ const CreateDevice = observer(({ showModal, onHide }) => {
     formData.append('name', name);
     formData.append('price', 10);
     formData.append('img', file);
-    formData.append('brandId', 4);
-    formData.append('typeId', 4);
+    formData.append('brandId', device.selectedBrand);
+    formData.append('typeId', device.selectedType);
     formData.append('info', JSON.stringify(info));
     createDevice(formData).then(data => onHide());
   };
@@ -58,12 +58,13 @@ const CreateDevice = observer(({ showModal, onHide }) => {
         <form className={styles.form}>
           <div>
             <label htmlFor='types'>Choose type:</label>
-            <select className={styles.input} name='types' id='types'>
+            <select className={styles.input} name='types' id='types'
+              onChange={e => device.setSelectedType(e.target.value)}
+            >
               {device.types.map((type) => (
                 <option
                   key={type.id}
-                  value={type.name}
-                  onClick={() => device.setSelectedType(type)}
+                  value={type.id}
                 >
                   {type.name}
                 </option>
@@ -72,12 +73,13 @@ const CreateDevice = observer(({ showModal, onHide }) => {
           </div>
           <div>
             <label htmlFor='brands'>Choose brand:</label>
-            <select className={styles.input} name='brands' id='brands'>
+            <select className={styles.input} name='brands' id='brands'
+              onChange={e => device.setSelectedBrand(e.target.value)}
+            >
               {device.brands.map((brand) => (
                 <option
                   key={brand.id}
-                  value={brand.name}
-                  onClick={() => device.setSelectedBrand(brand)}
+                  value={brand.id}
                 >
                   {brand.name}
                 </option>
