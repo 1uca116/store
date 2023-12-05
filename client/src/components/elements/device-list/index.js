@@ -3,6 +3,7 @@ import styles from '../device-list/index.module.css';
 import { Context } from '../../../index';
 import { useNavigate } from 'react-router-dom';
 import { DEVICE_ROUTE } from '../../../utils/consts';
+import {observer} from "mobx-react-lite";
 
 const DeviceItem = ({ device }) => {
   const history = useNavigate();
@@ -17,12 +18,12 @@ const DeviceItem = ({ device }) => {
       </div>
       <div>{device.rating}/10</div>
       <div className={styles.img_container}>
-        <img src={device.img} alt={''} className={styles.img} />
+        <img src={process.env.REACT_APP_API_URL + device.img} alt={''} className={styles.img} />
       </div>
     </div>
   );
 };
-const DeviceList = () => {
+const DeviceList = observer(() => {
   const { device } = useContext(Context);
 
   return (
@@ -32,6 +33,6 @@ const DeviceList = () => {
       ))}
     </div>
   );
-};
+});
 
 export default DeviceList;

@@ -1,7 +1,7 @@
 import './styles/index.css';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/navbar/index';
 import { observer } from 'mobx-react-lite';
 import {useContext, useEffect, useState} from 'react';
 import { Context } from './index';
@@ -18,9 +18,9 @@ const App = observer(() => {
               user.setUser(true);
               user.setIsAuth(true)
           }).finally(()=> setLoading(false))
-      }, 10000)
+      }, 1000)
 
-  }, [])
+  }, [user])
 
     if (loading) {
         return <Spinner/>

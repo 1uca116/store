@@ -1,11 +1,22 @@
 import styles from './index.module.css';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Context } from '../../../index';
+import { createDevice, fetchBrands, fetchTypes } from '../../../http/deviceApi';
+import { observer } from 'mobx-react-lite';
 
-const CreateDevice = ({ showModal, onHide }) => {
+const CreateDevice = observer(({ showModal, onHide }) => {
   const { device } = useContext(Context);
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState(10);
+  const [file, setFile] = useState(null);
   const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    fetchTypes().then((data) => device.setTypes(data));
+    fetchBrands().then((data) => device.setBrands(data));
+  }, [device]);
+
   const addInfo = (e) => {
     e.preventDefault();
     setInfo([...info, { title: '', description: '', number: Date.now() }]);
@@ -13,6 +24,27 @@ const CreateDevice = ({ showModal, onHide }) => {
   const removeInfo = (number) => {
     setInfo(info.filter((i) => i.number !== number));
   };
+  const changeInfo = (key, value, number) => {
+    setInfo(
+      info.map((i) => (i.number === number ? { ...i, [key]: value } : i))
+    );
+  };
+
+  const selectFile = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const addDevice = () => {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('price', 10);
+    formData.append('img', file);
+    formData.append('brandId', 4);
+    formData.append('typeId', 4);
+    formData.append('info', JSON.stringify(info));
+    createDevice(formData).then(data => onHide());
+  };
+
   return (
     <div
       className={classNames(styles.modal, {
@@ -28,7 +60,11 @@ const CreateDevice = ({ showModal, onHide }) => {
             <label htmlFor='types'>Choose type:</label>
             <select className={styles.input} name='types' id='types'>
               {device.types.map((type) => (
-                <option key={type.id} value={type.name}>
+                <option
+                  key={type.id}
+                  value={type.name}
+                  onClick={() => device.setSelectedType(type)}
+                >
                   {type.name}
                 </option>
               ))}
@@ -38,7 +74,11 @@ const CreateDevice = ({ showModal, onHide }) => {
             <label htmlFor='brands'>Choose brand:</label>
             <select className={styles.input} name='brands' id='brands'>
               {device.brands.map((brand) => (
-                <option key={brand.id} value={brand.name}>
+                <option
+                  key={brand.id}
+                  value={brand.name}
+                  onClick={() => device.setSelectedBrand(brand)}
+                >
                   {brand.name}
                 </option>
               ))}
@@ -49,6 +89,8 @@ const CreateDevice = ({ showModal, onHide }) => {
             <input
               className={styles.input}
               id='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder={'Enter the device name'}
             />
           </div>
@@ -57,6 +99,8 @@ const CreateDevice = ({ showModal, onHide }) => {
             <input
               className={styles.input}
               id='price'
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
               type={'number'}
               placeholder={'Enter the price'}
             />
@@ -66,6 +110,7 @@ const CreateDevice = ({ showModal, onHide }) => {
             <input
               className={styles.input}
               id='file'
+              onChange={selectFile}
               type={'file'}
               placeholder={'Enter the device name'}
             />
@@ -80,8 +125,20 @@ const CreateDevice = ({ showModal, onHide }) => {
 
           {info.map((i) => (
             <div key={i.number} className={styles.additional_form}>
-              <input className={styles.input} placeholder='Enter feature' />
-              <input className={styles.input} placeholder='Enter info' />
+              <input
+                className={styles.input}
+                value={i.title}
+                onChange={(e) => changeInfo('title', e.target.value, i.number)}
+                placeholder='Enter feature'
+              />
+              <input
+                className={styles.input}
+                value={i.description}
+                onChange={(e) =>
+                  changeInfo('description', e.target.value, i.number)
+                }
+                placeholder='Enter info'
+              />
               <button
                 className={styles.close}
                 onClick={() => removeInfo(i.number)}
@@ -91,12 +148,12 @@ const CreateDevice = ({ showModal, onHide }) => {
             </div>
           ))}
         </form>
-        <button className={styles.btn} id={'test2'}>
+        <button className={styles.btn} id={'test2'} onClick={addDevice}>
           Submit
         </button>
       </div>
     </div>
   );
-};
+});
 
 export default CreateDevice;

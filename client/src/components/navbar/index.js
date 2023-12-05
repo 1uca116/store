@@ -11,6 +11,11 @@ const Navbar = observer(() => {
   const { user } = useContext(Context);
   const history = useNavigate();
 
+  const logOut =()=> {
+    user.setUser({});
+    user.setIsAuth(false);
+  }
+
   return (
     <Container className={styles.main}>
       <Link to={'/'}>Main</Link>
@@ -19,13 +24,13 @@ const Navbar = observer(() => {
           <button className={styles.btn} onClick={() => history(ADMIN_ROUTE)}>
             Admin panel
           </button>
-          <button className={styles.btn} onClick={() => history(LOGIN_ROUTE)}>
+          <button className={styles.btn} onClick={() => logOut()}>
             Log out
           </button>
         </div>
       ) : (
         <div>
-          <button className={styles.btn} onClick={() => user.setIsAuth(true)}>
+          <button className={styles.btn} onClick={() => history(LOGIN_ROUTE)}>
             Authorization
           </button>
         </div>
