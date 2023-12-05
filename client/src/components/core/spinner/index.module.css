@@ -1,0 +1,16 @@
+.main {
+  @apply h-screen;
+}
+.ping {
+  @apply relative flex h-10 w-10;
+}
+.first_layer {
+  @apply animate-ping absolute inline-flex;
+  @apply h-full w-full;
+  @apply rounded-full bg-red opacity-75;
+}
+.second_layer {
+  @apply relative inline-flex;
+  @apply rounded-full bg-orange;
+  @apply h-10 w-10;
+}
