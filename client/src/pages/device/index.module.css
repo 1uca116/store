@@ -1,46 +1,45 @@
 .main {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-5;
-    @apply items-start;
+  @apply grid grid-cols-1 md:grid-cols-3 gap-5;
+  @apply items-start;
 }
 .card {
-    @apply bg-white rounded-md;
-    @apply p-4;
+  @apply bg-white rounded-md;
+  @apply p-4;
 }
 .general {
-    @apply col-span-2;
-    @apply grid grid-rows-3 grid-flow-col gap-4;
+  @apply col-span-2;
+  @apply grid grid-rows-3 grid-flow-col gap-4;
 }
 .img_container {
-    @apply bg-transparent;
-    @apply flex justify-center items-center;
-    @apply row-span-3;
+  @apply bg-transparent;
+  @apply flex justify-center items-center;
+  @apply row-span-3;
 }
 .main_info {
-    @apply flex justify-between;
-    @apply col-span-2
+  @apply flex justify-between;
+  @apply col-span-2;
 }
 .name {
-    @apply font-semibold text-xl;
+  @apply font-semibold text-xl;
 }
 .add_info {
-    @apply row-span-2 col-span-2;
-
+  @apply row-span-2 col-span-2;
 }
-table{
-    @apply w-full;
-    @apply border border-black;
+table {
+  @apply w-full;
+  @apply border border-black;
 }
-th, td {
-    @apply border border-black;
+th,
+td {
+  @apply border border-black;
 }
 td:last-child {
-   @apply text-center
+  @apply text-center;
 }
-.actions{
-    @apply flex flex-col gap-5;
-
+.actions {
+  @apply flex flex-col gap-5;
 }
 .btn {
-    @apply px-4 py-2;
-    @apply bg-red text-white rounded-md;
+  @apply px-4 py-2;
+  @apply bg-red text-white rounded-md;
 }

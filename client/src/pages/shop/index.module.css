@@ -1,14 +1,14 @@
 .main {
-    @apply !grid !grid-cols-4;
-    @apply gap-5;
-    @apply !items-start ;
+  @apply !grid !grid-cols-4;
+  @apply gap-5;
+  @apply !items-start;
 }
 .section_filter {
-    @apply col-span-1;
-    @apply bg-orange rounded-md;
-    @apply p-4;
+  @apply col-span-1;
+  @apply bg-orange rounded-md;
+  @apply p-4;
 }
 .section_cards {
-    @apply col-span-3;
-    @apply flex flex-col gap-5;
+  @apply col-span-3;
+  @apply flex flex-col gap-5;
 }

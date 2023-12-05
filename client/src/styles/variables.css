@@ -1,23 +1,23 @@
 @tailwind base;
 
 @layer base {
-    :root {
-        --color-white: 255, 255, 255;
-        --color-black: 17, 19, 20;
+  :root {
+    --color-white: 255, 255, 255;
+    --color-black: 17, 19, 20;
 
-        --color-stone: 246, 238, 227;
-        --color-red: 238, 106, 83;
-        --color-pink: 255, 204, 197;
-        --color-lavender: 174, 181, 245;
-        --color-orange: 254, 179, 139;
-        --color-green: 115, 190, 70;
+    --color-stone: 246, 238, 227;
+    --color-red: 238, 106, 83;
+    --color-pink: 255, 204, 197;
+    --color-lavender: 174, 181, 245;
+    --color-orange: 254, 179, 139;
+    --color-green: 115, 190, 70;
 
-        --color-neutral-200: 231, 229, 228;
-        --color-neutral-300: 214, 211, 209;
-        --color-neutral-400: 168, 162, 158;
-        --color-neutral-500: 120, 113, 108;
+    --color-neutral-200: 231, 229, 228;
+    --color-neutral-300: 214, 211, 209;
+    --color-neutral-400: 168, 162, 158;
+    --color-neutral-500: 120, 113, 108;
 
-        --sidebar-account-box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.1);
-        --sidebar-box-shadow: -12px 4px 20px 0px rgba(0, 0, 0, 0.04);
-    }
+    --sidebar-account-box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.1);
+    --sidebar-box-shadow: -12px 4px 20px 0px rgba(0, 0, 0, 0.04);
+  }
 }

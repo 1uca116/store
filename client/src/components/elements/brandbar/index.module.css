@@ -1,12 +1,12 @@
-.list{
-    @apply flex gap-5;
+.list {
+  @apply flex gap-5;
 }
 .list_item {
-    @apply px-4 py-3;
-    @apply rounded-md;
-    @apply hover:bg-white;
-    @apply cursor-pointer;
+  @apply px-4 py-3;
+  @apply rounded-md;
+  @apply hover:bg-white;
+  @apply cursor-pointer;
 }
-.list_item_selected{
-    @apply bg-white
+.list_item_selected {
+  @apply bg-white;
 }
