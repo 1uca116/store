@@ -14,8 +14,6 @@ Also in the development of the application the following were used:
 * "tailwindcss": "^3.3.5"
 
 For running this app you should use these following commands:
-`npm run dev `- start the server
-`npm start ` - start the client
 
 | Command          |           Target            |                                      Host |
 |------------------|:---------------------------:|------------------------------------------:|
