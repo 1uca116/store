@@ -1,0 +1,18 @@
+.button {
+    @apply px-6 py-3;
+    @apply rounded-2xl;
+    background-size: 200% 100%;
+    transition: background-position 0.5s;
+}
+.button:hover {
+    background-position: -100% 0;
+}
+.primary {
+    @apply bg-gradient-to-r from-marengo from-50% to-nevada to-50%;
+}
+.secondary {
+    @apply bg-gradient-to-r from-darkGunmetal from-50% to-steelGray to-50%;
+}
+.tertiary {
+    @apply bg-gradient-to-r from-lightGunmetal from-50% to-scarpaGray to-50%;
+}

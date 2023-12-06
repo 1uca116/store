@@ -6,11 +6,13 @@ import {
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
+  MAIN_ROUTE,
 } from './utils/consts';
 import Basket from './pages/basket/index';
 import Shop from './pages/shop/index';
 import Auth from './pages/auth/index';
-import DevicePage from './pages/device/index';
+import Device from './pages/device/index';
+import Main from './pages/main';
 
 export const authRoutes = [
   {
@@ -29,6 +31,10 @@ export const publicRoutes = [
     Component: <Shop />,
   },
   {
+    path: MAIN_ROUTE,
+    Component: <Main />,
+  },
+  {
     path: LOGIN_ROUTE,
     Component: <Auth />,
   },
@@ -38,6 +44,6 @@ export const publicRoutes = [
   },
   {
     path: DEVICE_ROUTE + '/:id',
-    Component: <DevicePage />,
+    Component: <Device/>,
   },
 ];

@@ -4,6 +4,7 @@ import Container from '../../components/core/container';
 import CreateType from '../../components/elements/modals/CreateType';
 import CreateBrand from '../../components/elements/modals/CreateBrand';
 import CreateDevice from '../../components/elements/modals/CreateDevice';
+import Button from '../../components/core/button';
 
 const Admin = () => {
   const [typeVisible, setTypeVisible] = useState(false);
@@ -12,15 +13,18 @@ const Admin = () => {
 
   return (
     <Container className={styles.main}>
-      <button className={styles.btn} onClick={() => setTypeVisible(true)}>
+        <div className={styles.btn_group}>
+      <Button variant={'secondary'} onClick={() => setTypeVisible(true)}>
         Add type
-      </button>
-      <button className={styles.btn} onClick={() => setBrandVisible(true)}>
+      </Button>
+      <Button variant={'secondary'} onClick={() => setBrandVisible(true)}>
         Add brand
-      </button>
-      <button className={styles.btn} onClick={() => setDeviceVisible(true)}>
+      </Button>
+      <Button variant={'secondary'} onClick={() => setDeviceVisible(true)}>
         Add device
-      </button>
+      </Button>
+        </div>
+
       <CreateType
         showModal={typeVisible}
         onHide={() => setTypeVisible(false)}

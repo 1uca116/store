@@ -1,0 +1,34 @@
+.main {
+    @apply min-h-screen;
+    @apply items-start md:justify-start;
+    @apply !grid !grid-cols-1 md:!grid-cols-6 gap-10;
+}
+.promo_lg {
+    @apply col-span-4;
+    @apply hidden md:block;
+}
+
+.promo_sm {
+    @apply block md:hidden;
+    @apply col-span-1;
+    @apply w-full;
+}
+
+.info {
+    @apply col-span-1 md:col-span-2;
+    @apply bg-shuttleGray;
+    @apply rounded-2xl;
+    @apply min-h-[450px];
+    @apply p-6;
+}
+.card {
+    @apply h-96;
+    @apply p-6;
+}
+.trending {
+    @apply flex items-center gap-5;
+    @apply text-xl
+}
+.lightning {
+    @apply text-3xl text-gold
+}

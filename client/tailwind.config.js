@@ -23,6 +23,7 @@ module.exports = {
       darkGunmetal: generateColorClass('color-dark-gunmetal'),
       pastelGreen: generateColorClass('color-pastel-green'),
       lightSalmon: generateColorClass('color-light-salmon'),
+      gold: generateColorClass('color-gold'),
 
       neutral: {
         200: generateColorClass('color-neutral-200'),

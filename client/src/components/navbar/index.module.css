@@ -1,11 +1,23 @@
 .main {
   @apply bg-steelGray;
   @apply justify-between;
+  @apply grid grid-cols-10;
 }
-.btn_group {
-  @apply flex gap-2;
+.links_group {
+  @apply col-span-7;
+  @apply flex gap-10;
 }
 .btn {
   @apply bg-red text-white;
   @apply p-3 rounded-md;
+}
+.brand {
+  @apply col-span-2;
+  @apply flex gap-2;
+}
+.logo {
+  @apply text-5xl text-pastelGreen;
+}
+.title {
+  @apply text-xl text-pastelGreen;
 }

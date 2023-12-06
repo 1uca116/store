@@ -5,29 +5,36 @@ import { Context } from '../../index';
 import { observer } from 'mobx-react-lite';
 import Container from '../core/container';
 import { useNavigate } from 'react-router-dom';
-import { ADMIN_ROUTE, LOGIN_ROUTE } from '../../utils/consts';
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../../utils/consts';
+import { IoLogoElectron } from 'react-icons/io5';
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
   const history = useNavigate();
 
-  const logOut =()=> {
+  const logOut = () => {
     user.setUser({});
     user.setIsAuth(false);
-  }
+  };
 
   return (
     <Container className={styles.main}>
-      <Link to={'/'}>Main</Link>
-      {user.isAuth ? (
-        <div className={styles.btn_group}>
-          <button className={styles.btn} onClick={() => history(ADMIN_ROUTE)}>
-            Admin panel
-          </button>
-          <button className={styles.btn} onClick={() => logOut()}>
-            Log out
-          </button>
+      <Link to={'/'} className={styles.brand}>
+        <IoLogoElectron className={styles.logo} />
+        <div>
+          <div className={styles.title}>TECHNOCART</div>
+          <div>electronics</div>
         </div>
+      </Link>
+      <div className={styles.links_group}>
+        <Link to={SHOP_ROUTE}>Online shop</Link>
+        {user.isAuth && <Link to={ADMIN_ROUTE}>Admin panel</Link>}
+      </div>
+
+      {user.isAuth ? (
+        <button className={styles.btn} onClick={() => logOut()}>
+          Log out
+        </button>
       ) : (
         <div>
           <button className={styles.btn} onClick={() => history(LOGIN_ROUTE)}>
