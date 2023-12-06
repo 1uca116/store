@@ -4,14 +4,13 @@
   @apply w-full h-full;
   @apply pt-24;
   @apply overflow-auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  @apply bg-neutral-400/30;
 }
 .visible {
   @apply flex;
 }
 .modal_content {
-  @apply bg-white border border-red;
+  @apply bg-steelGray rounded-2xl;
   @apply m-auto p-5;
   @apply flex flex-col items-end justify-between;
 }
@@ -19,30 +18,21 @@
   @apply flex flex-col gap-4;
 }
 .input {
-  @apply bg-stone rounded-md;
+  @apply bg-neutral-200 rounded-2xl;
   @apply px-4 py-2;
   @apply w-full;
+  @apply text-black;
+  @apply outline-none;
 }
 .btn {
-  @apply px-4 py-2 mt-4;
-  @apply bg-red text-white rounded-md;
+  @apply mt-4;
   @apply w-full;
 }
-.btn_secondary {
-  @apply px-4 py-2;
-  @apply bg-transparent text-red rounded-md;
-  @apply border border-red;
-}
 .close {
-  @apply text-neutral-400;
-  @apply font-semibold text-xl;
+  @apply mb-2;
+  @apply text-sm leading-3;
+  @apply !p-3;
 }
-
-.close:hover,
-.close:focus {
-  @apply text-black cursor-pointer;
-}
-
 .additional_form {
   @apply flex gap-5 items-center;
 }

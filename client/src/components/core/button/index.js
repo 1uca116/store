@@ -2,12 +2,12 @@ import styles from './index.module.css';
 import React from 'react';
 import classNames from 'classnames';
 
-const Button = ({ variant, children, ...buttonProps }) => {
+const Button = ({ variant, className, children, ...buttonProps }) => {
   return (
     <button
       {...buttonProps}
       className={classNames(
-        styles.button,
+        styles.button, className,
         { [styles.primary]: variant === 'primary' },
         { [styles.secondary]: variant === 'secondary' },
         { [styles.tertiary]: variant === 'tertiary' }

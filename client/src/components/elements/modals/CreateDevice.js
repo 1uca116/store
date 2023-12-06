@@ -4,11 +4,12 @@ import classNames from 'classnames';
 import { Context } from '../../../index';
 import { createDevice, fetchBrands, fetchTypes } from '../../../http/deviceApi';
 import { observer } from 'mobx-react-lite';
+import Button from '../../core/button';
 
 const CreateDevice = observer(({ showModal, onHide }) => {
   const { device } = useContext(Context);
   const [name, setName] = useState('');
-  const [price, setPrice] = useState(10);
+  const [price, setPrice] = useState(0);
   const [file, setFile] = useState(null);
   const [info, setInfo] = useState([]);
 
@@ -42,7 +43,7 @@ const CreateDevice = observer(({ showModal, onHide }) => {
     formData.append('brandId', device.selectedBrand);
     formData.append('typeId', device.selectedType);
     formData.append('info', JSON.stringify(info));
-    createDevice(formData).then(data => onHide());
+    createDevice(formData).then((data) => onHide());
   };
 
   return (
@@ -52,20 +53,21 @@ const CreateDevice = observer(({ showModal, onHide }) => {
       })}
     >
       <div className={styles.modal_content}>
-        <div className={styles.close} onClick={onHide}>
+        <Button variant={'tertiary'} onClick={onHide} className={styles.close}>
           &times;
-        </div>
+        </Button>
+
         <form className={styles.form}>
           <div>
             <label htmlFor='types'>Choose type:</label>
-            <select className={styles.input} name='types' id='types'
-              onChange={e => device.setSelectedType(e.target.value)}
+            <select
+              className={styles.input}
+              name='types'
+              id='types'
+              onChange={(e) => device.setSelectedType(e.target.value)}
             >
               {device.types.map((type) => (
-                <option
-                  key={type.id}
-                  value={type.id}
-                >
+                <option key={type.id} value={type.id}>
                   {type.name}
                 </option>
               ))}
@@ -73,14 +75,14 @@ const CreateDevice = observer(({ showModal, onHide }) => {
           </div>
           <div>
             <label htmlFor='brands'>Choose brand:</label>
-            <select className={styles.input} name='brands' id='brands'
-              onChange={e => device.setSelectedBrand(e.target.value)}
+            <select
+              className={styles.input}
+              name='brands'
+              id='brands'
+              onChange={(e) => device.setSelectedBrand(e.target.value)}
             >
               {device.brands.map((brand) => (
-                <option
-                  key={brand.id}
-                  value={brand.id}
-                >
+                <option key={brand.id} value={brand.id}>
                   {brand.name}
                 </option>
               ))}
@@ -117,13 +119,9 @@ const CreateDevice = observer(({ showModal, onHide }) => {
               placeholder={'Enter the device name'}
             />
           </div>
-          <button
-            onClick={addInfo}
-            className={styles.btn_secondary}
-            id={'test'}
-          >
+          <Button variant={'tertiary'} onClick={addInfo}>
             Add description
-          </button>
+          </Button>
 
           {info.map((i) => (
             <div key={i.number} className={styles.additional_form}>
@@ -141,18 +139,15 @@ const CreateDevice = observer(({ showModal, onHide }) => {
                 }
                 placeholder='Enter info'
               />
-              <button
-                className={styles.close}
-                onClick={() => removeInfo(i.number)}
-              >
+              <Button variant={'tertiary'} onClick={() => removeInfo(i.number)}>
                 &times;
-              </button>
+              </Button>
             </div>
           ))}
         </form>
-        <button className={styles.btn} id={'test2'} onClick={addDevice}>
+        <Button variant={'primary'} onClick={addDevice} className={styles.btn}>
           Submit
-        </button>
+        </Button>
       </div>
     </div>
   );

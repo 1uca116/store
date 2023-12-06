@@ -2,6 +2,7 @@ import styles from './index.module.css';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { createType } from '../../../http/deviceApi';
+import Button from '../../core/button';
 
 const CreateType = ({ showModal, onHide }) => {
   const [type, setType] = useState('');
@@ -17,9 +18,10 @@ const CreateType = ({ showModal, onHide }) => {
       })}
     >
       <div className={styles.modal_content}>
-        <div className={styles.close} onClick={onHide}>
+        <Button variant={'tertiary'} onClick={onHide} className={styles.close}>
           &times;
-        </div>
+        </Button>
+
         <form className={styles.form}>
           <input
             className={styles.input}
@@ -27,9 +29,9 @@ const CreateType = ({ showModal, onHide }) => {
             onChange={(e) => setType(e.target.value)}
             placeholder={'Enter the type'}
           />
-          <button className={styles.btn} onClick={addType}>
+          <Button variant={'primary'} onClick={addType}>
             Submit
-          </button>
+          </Button>
         </form>
       </div>
     </div>

@@ -2,13 +2,14 @@ import styles from './index.module.css';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { createBrand } from '../../../http/deviceApi';
+import Button from '../../core/button';
 
 const CreateBrand = ({ showModal, onHide }) => {
   const [brand, setBrand] = useState('');
 
   const addBrand = () => {
     createBrand({ name: brand }).then((data) => setBrand(''));
-    onHide()
+    onHide();
   };
 
   return (
@@ -18,9 +19,10 @@ const CreateBrand = ({ showModal, onHide }) => {
       })}
     >
       <div className={styles.modal_content}>
-        <div className={styles.close} onClick={onHide}>
+        <Button variant={'tertiary'} onClick={onHide} className={styles.close}>
           &times;
-        </div>
+        </Button>
+
         <form className={styles.form}>
           <input
             className={styles.input}
@@ -28,9 +30,9 @@ const CreateBrand = ({ showModal, onHide }) => {
             onChange={(e) => setBrand(e.target.value)}
             placeholder={'Enter the brand'}
           />
-          <button className={styles.btn} onClick={addBrand}>
+          <Button variant={'primary'} onClick={addBrand}>
             Submit
-          </button>
+          </Button>
         </form>
       </div>
     </div>
