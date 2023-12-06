@@ -7,6 +7,7 @@ import Container from '../core/container';
 import { useNavigate } from 'react-router-dom';
 import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../../utils/consts';
 import { IoLogoElectron } from 'react-icons/io5';
+import Button from '../core/button';
 
 const Navbar = observer(() => {
   const { user } = useContext(Context);
@@ -21,7 +22,7 @@ const Navbar = observer(() => {
     <Container className={styles.main}>
       <Link to={'/'} className={styles.brand}>
         <IoLogoElectron className={styles.logo} />
-        <div>
+        <div className={styles.brand_name}>
           <div className={styles.title}>TECHNOCART</div>
           <div>electronics</div>
         </div>
@@ -32,15 +33,13 @@ const Navbar = observer(() => {
       </div>
 
       {user.isAuth ? (
-        <button className={styles.btn} onClick={() => logOut()}>
+        <Button variant={'primary'} className={styles.btn} onClick={() => logOut()}>
           Log out
-        </button>
+        </Button>
       ) : (
-        <div>
-          <button className={styles.btn} onClick={() => history(LOGIN_ROUTE)}>
-            Authorization
-          </button>
-        </div>
+        <Button variant={'primary'} className={styles.btn} onClick={() => history(LOGIN_ROUTE)}>
+          Authorization
+        </Button>
       )}
     </Container>
   );

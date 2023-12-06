@@ -3,13 +3,15 @@ import React, { useContext, useState } from 'react';
 import Container from '../../components/core/container';
 import {
   LOGIN_ROUTE,
+  MAIN_ROUTE,
   REGISTRATION_ROUTE,
-  SHOP_ROUTE,
 } from '../../utils/consts';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { login, registration } from '../../http/userApi';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../../index';
+import Card from '../../components/core/card';
+import Button from '../../components/core/button';
 
 const Auth = observer(() => {
   const { user } = useContext(Context);
@@ -32,7 +34,7 @@ const Auth = observer(() => {
       user.setUser('user', user);
       console.log(user);
       user.setIsAuth(true);
-      history(SHOP_ROUTE);
+      history(MAIN_ROUTE);
     } catch (e) {
       alert(e.response.data.message);
     }
@@ -41,7 +43,7 @@ const Auth = observer(() => {
   console.log('is login?', isLogin);
   return (
     <Container className={styles.main}>
-      <div className={styles.card}>
+      <Card className={styles.card}>
         <h2 className={styles.title}>{isLogin ? 'Login' : 'Create account'}</h2>
         <form className={styles.form}>
           <input
@@ -58,10 +60,10 @@ const Auth = observer(() => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <button className={styles.btn} onClick={click}>
+        <Button variant={'primary'} onClick={click}>
           {isLogin ? 'Login' : 'Submit'}
-        </button>
-      </div>
+        </Button>
+      </Card>
       {isLogin ? (
         <Link to={REGISTRATION_ROUTE} className={styles.link}>
           Create an account

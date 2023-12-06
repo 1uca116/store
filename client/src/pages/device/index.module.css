@@ -1,14 +1,14 @@
 .main {
   @apply grid grid-cols-1 md:grid-cols-3 gap-5;
   @apply items-start;
+  @apply min-h-screen;
 }
 .card {
-  @apply bg-white rounded-md;
   @apply p-4;
 }
 .general {
   @apply col-span-2;
-  @apply grid grid-rows-3 grid-flow-col gap-4;
+  @apply grid md:grid-rows-3 lg:grid-flow-col gap-4;
 }
 .img_container {
   @apply bg-transparent;
@@ -16,7 +16,8 @@
   @apply row-span-3;
 }
 .main_info {
-  @apply flex justify-between;
+  @apply flex flex-col md:flex-row gap-5;
+  @apply justify-between items-center;
   @apply col-span-2;
 }
 .name {
@@ -25,21 +26,31 @@
 .add_info {
   @apply row-span-2 col-span-2;
 }
-table {
-  @apply w-full;
-  @apply border border-black;
+
+.card_info {
+  @apply bg-gradient-to-tr from-nevada from-10% via-marengo via-40% to-darkGunmetal to-70%;
+  @apply rounded-2xl;
 }
-th,
-td {
-  @apply border border-black;
+.thead {
+  @apply bg-steelGray;
+  @apply rounded-tl-2xl rounded-tr-2xl;
+  @apply p-4;
+  @apply flex;
 }
-td:last-child {
-  @apply text-center;
+.thead_item {
+  @apply flex-1;
+}
+.content {
+  @apply flex;
+  @apply p-4;
 }
 .actions {
   @apply flex flex-col gap-5;
 }
+.price {
+  @apply font-bold text-center;
+  @apply p-10;
+}
 .btn {
-  @apply px-4 py-2;
-  @apply bg-red text-white rounded-md;
+  @apply bg-pastelGreen text-black;
 }

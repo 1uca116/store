@@ -26,7 +26,7 @@
   @apply bg-pastelGreen rounded-full;
   @apply w-7 h-7;
   @apply flex justify-center items-center;
-  @apply text-lg font-semibold;
+  @apply text-lg text-black;
   @apply cursor-pointer;
 }
 .main_info {

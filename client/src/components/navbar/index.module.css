@@ -4,20 +4,23 @@
   @apply grid grid-cols-10;
 }
 .links_group {
-  @apply col-span-7;
+  @apply col-span-6 md:col-span-6 lg:col-span-7;
   @apply flex gap-10;
 }
-.btn {
-  @apply bg-red text-white;
-  @apply p-3 rounded-md;
-}
 .brand {
-  @apply col-span-2;
+  @apply col-span-2 md:col-span-2;
   @apply flex gap-2;
 }
 .logo {
   @apply text-5xl text-pastelGreen;
 }
+.brand_name {
+  @apply hidden lg:block;
+}
 .title {
   @apply text-xl text-pastelGreen;
+}
+.btn {
+  @apply col-span-2 lg:col-span-1;
+  @apply whitespace-nowrap;
 }

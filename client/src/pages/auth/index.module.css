@@ -1,29 +1,25 @@
 .main {
   @apply flex flex-col;
-  @apply h-full;
+  @apply min-h-screen;
 }
 .card {
-  @apply rounded-md bg-orange;
-  @apply p-5 mb-3;
+  @apply p-5;
   @apply flex flex-col gap-3;
   @apply w-full max-w-sm;
 }
 .title {
-  @apply text-center;
+  @apply text-center font-bold;
 }
 .form {
   @apply flex flex-col gap-3;
 }
 .input {
-  @apply px-3 py-1;
-  @apply rounded-md;
-}
-.btn {
-  @apply mt-3;
-  @apply bg-red;
-  @apply px-3 py-1;
-  @apply rounded-md;
+  @apply bg-neutral-200 rounded-2xl;
+  @apply px-4 py-2;
+  @apply w-full;
+  @apply text-black;
+  @apply outline-none;
 }
 .link {
-  @apply text-red underline decoration-solid;
+  @apply text-pastelGreen underline decoration-solid;
 }
