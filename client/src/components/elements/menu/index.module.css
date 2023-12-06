@@ -1,6 +1,11 @@
+.main {
+  @apply flex flex-col gap-4;
+}
 .list_item {
-
+  @apply p-2;
+  @apply hover:font-bold;
+  @apply cursor-pointer;
 }
 .list_item_active {
-
+  @apply font-bold;
 }

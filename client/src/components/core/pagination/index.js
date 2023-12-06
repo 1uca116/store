@@ -15,7 +15,7 @@ const Pagination = observer(() => {
     <div>
       <div className={styles.pagination}>
         {pages.map((page) => (
-          <button onClick={() => device.setPage(page)}>{page}</button>
+          <button key={page.id} onClick={() => device.setPage(page)}>{page}</button>
         ))}
       </div>
     </div>

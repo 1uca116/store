@@ -1,5 +1,5 @@
 .cards_list {
-  @apply grid grid-cols-3 gap-4;
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
 }
 .card {
   @apply flex flex-col;
@@ -47,6 +47,9 @@
   @apply text-xl font-bold;
   @apply text-lightSalmon
 }
+.img_container{
+  @apply flex justify-center items-center
+}
 .img {
-  @apply w-[300px] h-full;
+  @apply max-h-[380px];
 }

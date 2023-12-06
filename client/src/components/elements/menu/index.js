@@ -49,12 +49,10 @@ const Menu = observer(() => {
   ];
 
   return (
-    <div>
-      <div>
-        {menuData.map(({ title, content }) => (
-          <Accordion title={title} content={content} />
-        ))}
-      </div>
+    <div className={styles.main}>
+      {menuData.map(({ title, content }) => (
+        <Accordion key={title} title={title} content={content} />
+      ))}
     </div>
   );
 });

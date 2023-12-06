@@ -11,7 +11,6 @@ import { FaHeart } from 'react-icons/fa';
 const DeviceItem = ({ device }) => {
   const history = useNavigate();
 
-
   return (
     <Card className={styles.card}>
       <div className={styles.section_img}>
@@ -22,7 +21,13 @@ const DeviceItem = ({ device }) => {
           />
           <FaHeart className={styles.heart} />
         </div>
-        <img src={process.env.REACT_APP_API_URL + device.img} />
+        <div className={styles.img_container}>
+          <img
+            src={process.env.REACT_APP_API_URL + device.img}
+            className={styles.img}
+            alt={''}
+          />
+        </div>
       </div>
       <div className={styles.section_info}>
         <div className={styles.quick_actions}>
