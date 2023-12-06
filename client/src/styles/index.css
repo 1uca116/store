@@ -10,7 +10,8 @@
   body {
     font-family: 'Poppins', sans-serif;
     @apply w-screen overflow-x-hidden;
-    @apply bg-stone text-black;
+    @apply bg-gradient-to-bl from-shuttleGray from-10% via-trout via-40% to-darkGunmetal to-70%;
+    @apply text-white;
   }
 
   input[type='number']::-webkit-inner-spin-button,

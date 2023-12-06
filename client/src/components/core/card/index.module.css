@@ -1,0 +1,4 @@
+.main {
+    @apply bg-gradient-to-bl from-nevada from-10% via-marengo via-40% to-darkGunmetal to-70%;
+    @apply rounded-2xl;
+}

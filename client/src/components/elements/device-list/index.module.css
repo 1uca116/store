@@ -2,23 +2,50 @@
   @apply grid grid-cols-3 gap-4;
 }
 .card {
-  @apply bg-white rounded-md;
-  @apply p-4;
+  @apply flex flex-col;
+  @apply justify-between;
+}
+.section_img {
+  @apply p-6;
+}
+.section_info {
+  @apply p-6;
+  @apply bg-gradient-to-bl from-brightGray to-lightGunmetal ;
+  @apply rounded-bl-2xl rounded-br-2xl;
+}
+.quick_actions{
+  @apply flex justify-between items-center;
+  @apply mb-2;
+}
+.type_tag {
+  @apply rounded-2xl bg-scarpaGray;
+  @apply px-2 py-1;
+  @apply text-sm;
+}
+.add {
+  @apply bg-pastelGreen rounded-full;
+  @apply w-7 h-7;
+  @apply flex justify-center items-center;
+  @apply text-lg font-semibold;
   @apply cursor-pointer;
 }
 .main_info {
-  @apply grid grid-cols-1 md:grid-cols-2 items-center justify-between;
-  @apply pb-5;
+  @apply flex flex-col;
 }
 .title {
-  @apply col-span-1;
-  @apply text-xl font-bold;
+  @apply text-xl;
 }
 .price {
-  @apply text-center md:text-end;
+  @apply text-xl font-bold;
 }
-.img_container {
-  @apply flex justify-center;
+.icon {
+  @apply text-xl font-bold;
+  @apply cursor-pointer;
+  @apply hover:text-neutral-400
+}
+.heart{
+  @apply text-xl font-bold;
+  @apply text-lightSalmon
 }
 .img {
   @apply w-[300px] h-full;

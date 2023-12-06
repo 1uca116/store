@@ -11,7 +11,7 @@ const Admin = () => {
   const [deviceVisible, setDeviceVisible] = useState(false);
 
   return (
-    <Container>
+    <Container className={styles.main}>
       <button className={styles.btn} onClick={() => setTypeVisible(true)}>
         Add type
       </button>

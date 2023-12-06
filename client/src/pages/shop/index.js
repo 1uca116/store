@@ -1,13 +1,12 @@
 import styles from './index.module.css';
 import React, { useContext, useEffect } from 'react';
 import Container from '../../components/core/container';
-import TypeBar from '../../components/elements/typebar';
-import BrandBar from '../../components/elements/brandbar';
 import DeviceList from '../../components/elements/device-list';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../../index';
 import { fetchBrands, fetchDevices, fetchTypes } from '../../http/deviceApi';
 import Pagination from '../../components/core/pagination';
+import Menu from "../../components/elements/menu";
 
 const Shop = observer(() => {
   const { device } = useContext(Context);
@@ -26,7 +25,7 @@ const Shop = observer(() => {
       device.selectedType.id,
       device.selectedBrand.id,
       device.page,
-      2
+      9
     ).then((data) => {
       device.setDevices(data.rows);
       device.setTotalCount(data.count);
@@ -36,10 +35,9 @@ const Shop = observer(() => {
   return (
     <Container className={styles.main}>
       <div className={styles.section_filter}>
-        <TypeBar />
+        <Menu/>
       </div>
       <div className={styles.section_cards}>
-        <BrandBar />
         <DeviceList />
         {device.totalCount > 9 ? <Pagination /> : ''}
       </div>

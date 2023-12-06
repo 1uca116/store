@@ -7,7 +7,6 @@ const AppRouter = () => {
   const { user } = useContext(Context);
 
   return (
-    <div style={{ height: window.innerHeight - 80 }}>
       <Routes>
         {user.isAuth &&
           authRoutes.map(({ path, Component }) => (
@@ -17,7 +16,6 @@ const AppRouter = () => {
           <Route key={path} path={path} element={Component} />
         ))}
       </Routes>
-    </div>
   );
 };
 

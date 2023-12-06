@@ -1,5 +1,5 @@
 .main {
-  @apply bg-white;
+  @apply bg-steelGray;
   @apply justify-between;
 }
 .btn_group {

@@ -19,5 +19,17 @@
 
     --sidebar-account-box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.1);
     --sidebar-box-shadow: -12px 4px 20px 0px rgba(0, 0, 0, 0.04);
+
+    --color-scarpa-flow: 90, 90, 99;
+    --color-shuttle-gray: 95, 102, 118;
+    --color-nevada: 99, 108, 124;
+    --color-trout: 75, 81, 95;
+    --color-marengo: 79, 86, 101;
+    --color-bright-gray: 62, 64, 77;
+    --color-light-gunmetal: 45, 46, 57;
+    --color-steel-gray: 38, 39, 51;
+    --color-dark-gunmetal: 31, 32, 44;
+    --color-pastel-green: 124,238,129;
+    --color-light-salmon: 255,146,153;
   }
 }

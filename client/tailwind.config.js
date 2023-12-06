@@ -12,6 +12,18 @@ module.exports = {
       orange: generateColorClass('color-orange'),
       green: generateColorClass('color-green'),
 
+      scarpaGray: generateColorClass('color-scarpa-flow'),
+      shuttleGray: generateColorClass('color-shuttle-gray'),
+      nevada: generateColorClass('color-nevada'),
+      trout: generateColorClass('color-trout'),
+      marengo: generateColorClass('color-marengo'),
+      brightGray: generateColorClass('color-bright-gray'),
+      lightGunmetal: generateColorClass('color-light-gunmetal'),
+      steelGray: generateColorClass('color-steel-gray'),
+      darkGunmetal: generateColorClass('color-dark-gunmetal'),
+      pastelGreen: generateColorClass('color-pastel-green'),
+      lightSalmon: generateColorClass('color-light-salmon'),
+
       neutral: {
         200: generateColorClass('color-neutral-200'),
         300: generateColorClass('color-neutral-300'),
