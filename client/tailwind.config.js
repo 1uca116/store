@@ -5,13 +5,6 @@ module.exports = {
     colors: {
       white: generateColorClass('color-white'),
       black: generateColorClass('color-black'),
-      stone: generateColorClass('color-stone'),
-      red: generateColorClass('color-red'),
-      pink: generateColorClass('color-pink'),
-      lavender: generateColorClass('color-lavender'),
-      orange: generateColorClass('color-orange'),
-      green: generateColorClass('color-green'),
-
       scarpaGray: generateColorClass('color-scarpa-flow'),
       shuttleGray: generateColorClass('color-shuttle-gray'),
       nevada: generateColorClass('color-nevada'),

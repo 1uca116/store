@@ -7,10 +7,10 @@
 .first_layer {
   @apply animate-ping absolute inline-flex;
   @apply h-full w-full;
-  @apply rounded-full bg-red opacity-75;
+  @apply rounded-full bg-pastelGreen opacity-75;
 }
 .second_layer {
   @apply relative inline-flex;
-  @apply rounded-full bg-orange;
+  @apply rounded-full bg-pastelGreen;
   @apply h-10 w-10;
 }
